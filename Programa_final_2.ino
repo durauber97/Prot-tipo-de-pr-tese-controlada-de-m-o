@@ -32,7 +32,7 @@ Servo myservoIND;
 Servo myservoTRES;
 
 int posDEDAO = 160; 
-int posIND = 170;    
+int posIND = 140;    
 int posTRES = 90; 
  
 void setup(){
@@ -68,7 +68,7 @@ void loop() {
     }
 
     if(results.value == codTeclaDIR){
-      if(posIND <= 170){
+      if(posIND <= 140){
         posIND = posIND + 10;
         myservoIND.write(posIND);              // incrementa 10 graus ao motor do dedo indicador
         delay(7); 
@@ -78,7 +78,7 @@ void loop() {
     if(results.value == codTeclaESQ){
       if(analogRead(sensorPinIND)>=base){
       }else{
-        if(posIND >= 30){
+        if(posIND >= 0){
           posIND = posIND - 10;
           myservoIND.write(posIND);              // decrementa 10 graus ao motor do dedo indicador
           delay(7); 
@@ -109,7 +109,7 @@ void loop() {
           delay(7);
         }
 
-        for(posIND; posIND >=50; posIND--){
+        for(posIND; posIND >=20; posIND--){
           myservoIND.write(posIND);              // posiciona o motor do dedo indicador em 50 graus
           delay(7);
         }
@@ -120,13 +120,13 @@ void loop() {
     } 
 
     if(results.value == codTecla2){
-        if(posIND <=80){
-          for(;posIND <=80; posIND++){
+        if(posIND <=50){
+          for(;posIND <=50; posIND++){
             myservoIND.write(posIND);              // posiciona o motor do dedo indicador em 80 graus
             delay(7);
           }
         }else{
-            for(;posIND >=80; posIND--){
+            for(;posIND >=50; posIND--){
               myservoIND.write(posIND);              // posiciona o motor do dedo indicador em 50 graus
               delay(7);
             }
@@ -192,13 +192,13 @@ void loop() {
           delay(7);
         }
 
-        if(posIND <=100){
-          for(;posIND <=100; posIND++){
+        if(posIND <=70){
+          for(;posIND <=70; posIND++){
             myservoIND.write(posIND);              // posiciona o motor do dedo indicador em 100 graus
             delay(7);
           }
         }else{
-            for(;posIND >=100; posIND--){
+            for(;posIND >=70; posIND--){
               myservoIND.write(posIND);              // posiciona o motor do dedo indicador em 100 graus
               delay(7);
             }
@@ -206,7 +206,7 @@ void loop() {
     }
     
     if(results.value == codTecla5){
-        for(;posIND <=160; posIND++){
+        for(;posIND <=130; posIND++){
           myservoIND.write(posIND);              // posiciona o motor do dedo indicador em 160 graus
           delay(7);
         }
@@ -235,13 +235,13 @@ void loop() {
             }
         }
 
-        if(posIND <=50){
-          for(;posIND <=50; posIND++){
+        if(posIND <=20){
+          for(;posIND <=20; posIND++){
             myservoIND.write(posIND);              // posiciona o motor do dedo indicador em 50 graus
             delay(7);
           }
         }else{
-            for(;posIND >=50; posIND--){
+            for(;posIND >=20; posIND--){
               myservoIND.write(posIND);              // posiciona o motor do dedo indicador em 50 graus
               delay(7);
             }
